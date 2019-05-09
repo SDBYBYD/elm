@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="goods">
+  <view class="goodsTop">
+    商家
+  </view>
+  <view class="goodsList">
+    列表
+  </view>
+</view>
