@@ -1,9 +1,70 @@
 <!--index.wxml-->
 <view class="goods">
   <view class="goodsTop">
-    商家
+    <cover-image src='../../images/商品页_03.png' />
+    <view class="shadow"></view>
+    <view class="goodsTopShop">
+      <cover-image src="../../images/商品页_03.png" />
+      <view class="brand">
+        <view><view>品牌</view><view>粥品香坊（大运村）</view></view>
+        <view>蜂鸟专送/38分钟送达</view>
+        <view><view>减</view><view>在线支付满28减5,，满50减10</view></view>
+      </view>
+    </view>
+    <view class="announcement">
+      <view></view>
+      <view>公告</view>
+      <view>粥品香坊其烹饪粥料的源于中国千年古法，再融合现代制作工艺</view>
+      <view>></view>
+    </view>
   </view>
   <view class="goodsList">
-    列表
+    <!-- <view class="ListTop"><view>商品</view><view>评价</view><view>商家</view></view> -->
+    <view class="movie-container">
+      <!-- 导航栏 -->
+      <view class="navbar">
+        <block wx:for="{{navbarTitle}}" wx:key="index">
+        <view class="navbar-item " data-navbar-index="{{index}}" catchtap="onNavBarTap">
+            <text>{{item}}</text>
+          </view>
+    <view class="line" style="width:{{100/navbarTitle.length}}%;transform:translateX({{100*navbarActiveIndex}}%);"></view>
+        </block>
+      </view>
+      <view class="movie-content-wrapper">
+        <swiper current="{{navbarActiveIndex}}" bindchange="onBindAnimationFinish">
+    <!-- 这里可以自定义组件，我为了方便直接for的数据 -->
+    <!-- 自定义组件 放在<scroll-view>里面代替 {{item}}  -->
+          <swiper-item  wx:for="{{navbarTitle}}" wx:key="index">
+            <scroll-view scroll-y="{{true}}">
+              {{item}}
+            </scroll-view>
+          </swiper-item>
+        </swiper>
+      </view>
+    </view>
+    <view class="goodsCont">
+      <view class="Left">
+        <view>热销榜</view>
+        <view>单人特色套餐</view>
+        <view>特色粥品</view>
+        <view>精选热菜</view>
+        <view>爽口凉菜</view>
+        <view>半成品</view>
+        <view>饭类</view>
+        <view>面类</view>
+      </view>
+      <view class="Right">
+        <view class="title">单人特色套餐</view>
+        <view class="Foot">
+          <cover-image src="../../images/商品页_07.png" />
+          <view>
+            <view class="name">皮蛋瘦肉粥配包子套餐</view>
+            <view>咸粥</view>
+            <view><view>月售1132份</view><view>好评率100%</view></view>
+            <view class="num"><view><view>￥24</view><view>￥28</view></view><cover-image src="../../images/图层 1.png" /></view>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
 </view>
